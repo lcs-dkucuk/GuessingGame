@@ -125,8 +125,10 @@ struct GuessingGameView: View {
                 }
                 .buttonStyle(.borderedProminent)
             }
-
-            Text("Guesses so far: \(guessCount)")
+            HStack {
+                Image(systemName: "questionmark.message.fill")
+                Text("Guesses so far: \(guessCount)")
+            }
                 .font(.headline)
                 .foregroundStyle(Color.secondary)
         }
@@ -156,8 +158,10 @@ struct GuessingGameView: View {
         } else {
             // TRY: Change this message. Make it kinder, or sillier. put message here
             if guess < secretNumber {
+                messageSymbol = "trash.fill"
                 message = "Haha, no. My number is higher than that."
             } else {
+                messageSymbol = "trash.fill"
                 message = "Nope. Ha. My number is lower."
             }
         }
